@@ -59,11 +59,7 @@
 ## .ENV Template
 PORT=3000
 NODE_ENV=development
-
-# DB
 DATABASE_URL="mysql://root:@localhost:{{กรอก PORT}}/{{กรอก DB_NAME}}"
-
-# JWT
 JWT_ACCESS_SECRET=
 JWT_REFRESH_SECRET=
 JWT_ACCESS_EXPIRY=15m
