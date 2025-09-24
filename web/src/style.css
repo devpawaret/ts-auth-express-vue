@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --primary: oklch(0.7651 0.1374 225.01);
+    --primary-foreground: oklch(0.6952 0.1347 232.52);
+    --muted: oklch(0.9442 0.0053 286.3);
+    --muted-foreground: oklch(0.5546 0.0261 285.52);
+    --accent: oklch(0.9276 0.0058 264.53);
+    --accent-foreground: oklch(0.1408 0.0044 285.8229);
+    --destructive: oklch(58.061% 0.22358 19.52);
+    --border: oklch(0 0 0 / 10%);
+  }
+
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.6952 0.1347 232.52);
+    --primary-foreground: oklch(0.7651 0.1374 225.01);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.2739 0.0055 286.0326);
+    --accent-foreground: oklch(0.9851 0 0);
+    --destructive: oklch(0.558 0.2137 19.4);
+    --border: oklch(0.269 0 0);
+  }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+
+  --font-sans: 'Noto Sans Thai', sans-serif;
+
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-fade-slide-up: fadeSlideUp 0.8s ease-out forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body {
+    @apply text-foreground bg-background transition-colors duration-300;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  a {
+    @apply outline-none;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+}

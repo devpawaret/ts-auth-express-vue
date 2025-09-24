@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src", // กำหนดโฟลเดอร์สำหรับไฟล์โค้ดต้นฉบับ (source code)
+    "outDir": "./dist", // กำหนดโฟลเดอร์สำหรับไฟล์ JavaScript ที่คอมไพล์แล้ว
+    "module": "commonjs", // กำหนดรูปแบบโมดูลสำหรับโค้ดที่คอมไพล์แล้ว (CommonJS คือรูปแบบมาตรฐานของ Node.js)
+    "target": "es2021", // กำหนดเวอร์ชันของ ECMAScript ที่จะคอมไพล์ไปเป็น
+    "esModuleInterop": true, // อนุญาตให้ใช้การ import แบบ ES Module กับโมดูลที่เป็น CommonJS ได้
+    "strict": true, // เปิดใช้งานโหมดการตรวจสอบ Type ที่เข้มงวดทั้งหมด
+    "skipLibCheck": true // ข้ามการตรวจสอบ Type ของไฟล์ในโฟลเดอร์ node_modules เพื่อให้คอมไพล์เร็วขึ้น
+  },
+  // กำหนดว่าไฟล์ไหนที่ TypeScript ควรจะตรวจสอบและคอมไพล์ (ไฟล์ทั้งหมดในโฟลเดอร์ src)
+  "include": [
+    "src/**/*"
+  ],
+  // กำหนดว่าไฟล์ไหนที่ TypeScript ควรจะข้ามการตรวจสอบ (โฟลเดอร์ node_modules)
+  "exclude": [
+    "node_modules"
+  ]
+}
