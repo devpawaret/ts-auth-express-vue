@@ -57,6 +57,7 @@
 ---
 
 ## .ENV Template
+```env
 PORT=3000
 NODE_ENV=development
 DATABASE_URL="mysql://root:@localhost:{{กรอก PORT}}/{{กรอก DB_NAME}}"
