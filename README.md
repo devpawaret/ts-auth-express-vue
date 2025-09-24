@@ -19,6 +19,9 @@
   - Prisma
   - JWT (JsonWebToken)
 
+### Database
+  - MySQL (MariaDB)
+
 ---
 
 ## ⚙️ Flow การทำงาน
